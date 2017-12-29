@@ -1,0 +1,171 @@
+$fa-font-path: "~/font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+
+$default: #000000;
+$hover: #f9f9f9;
+$select: #535f59;
+$input: #fafafa;
+
+.no-select {
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    height: calc(100% + 1300px);
+    top: -800px;
+    left: 0;
+    z-index: 100;
+    cursor: default;
+}
+
+.open-list {
+    box-shadow: inset 0px 0px 2px 1px rgba($default, 0.1);
+    border: 1px solid rgba($default, 0.3) !important;
+}
+
+.new-select-button {
+    width: 250px;
+    outline: 0 none !important;
+    background-color: #f9f9f9;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    font-size: 13px;
+    height: 30px;
+
+    & ~ .new-select-list {
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+        & .new-select-list-item {
+            background: #fff;
+            min-height: 30px;
+            text-align: center;
+
+            &:hover {
+                background: #f9f9f9;
+            }
+        }  
+    }
+}
+
+.new-select {
+    position: relative;
+    width: calc(100% - 20px);
+    margin: 10px;
+    margin-top: 0px;
+    font-size: 13px;
+
+    &-item {
+        position: relative;
+        width: 100%;
+        min-height: 30px;
+        outline: 0;
+        border: 0;
+        border-radius: 3px;
+        background-color: $hover;
+        padding: 4px;
+        padding-left: 12px;
+        padding-right: 30px;
+        border: 1px solid rgba($default, 0.1);
+        border-radius: 2px;
+        cursor: default;
+        color: rgba($default, 0.7);
+        text-decoration: none;
+        cursor: pointer;
+
+        .select-show {
+            margin-right: 4px;
+        }
+
+        > i {
+            position: absolute;
+            display: block;
+            top: calc(50% - 7px);
+            right: 11px;
+            font-size: 120%;
+        }
+    }
+
+    &-filter {
+        //position: absolute;
+        color: rgba($default, 0.8);
+        width: 100%;
+        box-shadow: 2px 5px 30px 1px rgba($default, 0.2);
+        background-color: white;
+        max-width: inherit;
+        z-index: 200;
+        height: 100px;
+    }
+
+    &-list {
+        position: absolute;
+        color: rgba($default, 0.8);
+        width: 100%;
+        box-shadow: 2px 5px 30px 1px rgba($default, 0.2);
+        background-color: $hover;
+        max-width: inherit;
+        z-index: 200;
+
+        &-filter {
+            position: relative;
+            z-index: 300;
+            width: 100%;
+            padding: 4px 10px;
+            background-color: white;
+            
+            > input {
+                outline: 0;
+                border-radius: 4px;
+                padding: 4px;
+                margin-left: 5px;
+                border: 1px solid rgba($default, 0.2);
+                width: calc(100% - 170px);
+                background-color: $input;
+            }
+        }
+
+        &-ul {
+            position: relative;
+            max-height: 250px;
+            overflow: auto;
+            z-index: 300;
+        }
+
+        &-item {
+            position: relative;
+            width: 100%;
+            min-height: 30px;
+            border-bottom: 1px solid rgba($default, 0.1);
+            padding: 4px;
+            padding-left: 12px;
+            background-color: white;
+            cursor: pointer;
+            transition: all 150ms;
+           
+
+            &:hover {
+                background-color: $hover;
+                transition: all 150ms;
+            }
+        }
+
+        .selected-item {
+            color: white !important;
+            background-color: $select;
+            border-bottom: 1px solid rgba(white, 0.3) !important;
+        }
+
+        .disabled-item {
+            color: rgba($default, 0.4) !important;
+            background-color: $hover;
+            text-decoration: line-through;            
+        }
+
+        .alter-item {
+            padding-left: 12px;
+            font-size: 11px;
+        }
+    }
+}
