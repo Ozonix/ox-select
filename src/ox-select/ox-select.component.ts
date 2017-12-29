@@ -41,7 +41,7 @@ export class OxSelectComponent implements OnInit, OnChanges {
       if(!data.disabled) {
 
           if(this.multySelect) {
-              const exists = this.isSelect.findIndex((selected: any) => selected.input === data.input);
+              const exists = this.isSelect.findIndex((selected: any) => selected.output === data.output);
               
               if(exists == -1) {
                   this.isSelect.push(data);
