@@ -47,13 +47,13 @@ export class OxSelectComponent implements OnInit, OnChanges {
                   this.isSelect.push(data);
                   this.selectedData.push(data.output);
                   this.selectedShow.push({title:data.input, icon:data.icon || 'fa fa-check-circle'});
-                  const ind = this.inputData.findIndex((inputdata: any) => inputdata.input === data.input);
+                  const ind = this.inputData.findIndex((inputdata: any) => inputdata.output === data.output);
                   this.inputData[ind]['selected'] = true;
               } else {
                   this.isSelect.splice(exists,1);
                   this.selectedData.splice(exists,1);
                   this.selectedShow.splice(exists,1);
-                  const ind = this.inputData.findIndex((inputdata: any) => inputdata.input === data.input);
+                  const ind = this.inputData.findIndex((inputdata: any) => inputdata.output === data.output);
                   this.inputData[ind]['selected'] = false;
               }
 
