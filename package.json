@@ -1,6 +1,10 @@
 {
   "name": "ox-select",
   "version": "0.5.1",
+  "repository": {
+    "url": "https://github.com/Ozonix/ox-select.git",
+    "type": "git"
+  },
   "license": "MIT",
   "scripts": {
     "ng": "ng",
