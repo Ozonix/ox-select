@@ -75,6 +75,8 @@ $input: #fafafa;
         cursor: pointer;
         display: flex;
         align-items: center;
+        white-space: nowrap;
+        overflow: hidden;
 
         .select-show {
             margin-right: 4px;
