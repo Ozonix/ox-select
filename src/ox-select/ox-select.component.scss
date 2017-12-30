@@ -147,7 +147,11 @@ $input: #fafafa;
             background-color: white;
             cursor: pointer;
             transition: all 150ms;
-           
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            align-items: center;
 
             &:hover {
                 background-color: $hover;
