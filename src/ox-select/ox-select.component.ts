@@ -21,13 +21,10 @@ export class OxSelectComponent implements OnInit, OnChanges {
     @Input() headerIcon: string = '';
 
     @Output() outputData = new EventEmitter();
-    @Output() outputFilter = new EventEmitter();
 
     private searchingData: any[] = [];
     private selectedData: any[] = [];
     private selectedShow: any[] = [];
-
-    private isSelect: any[] = [];
 
     private init: boolean = false;
     private listTrigger: boolean = false;
@@ -43,16 +40,14 @@ export class OxSelectComponent implements OnInit, OnChanges {
         if(!data.disabled) {
 
             if(this.multySelect) {
-                const exists = this.isSelect.findIndex((selected: any) => selected.output === data.output);
+                const exists = this.selectedData.findIndex((selected: any) => selected === data.output);
                 
                 if(exists == -1) {
-                    this.isSelect.push(data);
                     this.selectedData.push(data.output);
                     this.selectedShow.push({title:data.input, icon:data.icon || 'fa fa-check-circle'});
                     const ind = this.inputData.findIndex((inputdata: any) => inputdata.output === data.output);
                     this.inputData[ind]['selected'] = true;
                 } else {
-                    this.isSelect.splice(exists,1);
                     this.selectedData.splice(exists,1);
                     this.selectedShow.splice(exists,1);
                     const ind = this.inputData.findIndex((inputdata: any) => inputdata.output === data.output);
