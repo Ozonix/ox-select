@@ -66,12 +66,12 @@ ul {
     &-item {
         position: relative;
         //width: 100%;
-        min-height: 30px;
+        //min-height: 30px;
         outline: 0;
         border: 0;
         border-radius: 3px;
         background-color: $hover;
-        padding: 4px;
+        padding: 8px;
         padding-left: 12px;
         padding-right: 30px;
         border: 1px solid rgba($default, 0.1);
