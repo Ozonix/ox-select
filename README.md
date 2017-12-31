@@ -138,15 +138,16 @@ where / где:
 
 -required/обязательные-  
 
-**input** - like <option>Input</option> / как <option>Input</option>  
-**output** - like value in <option value="output"> / как value в <option value="output">  
+**input** - like `<option>Input</option> `/ как `<option>Input</option>`  
+**output** - like value in `<option value="output">` / как value в `<option value="output">`  
 
 -additional/дополнительные-  
 
 **icon** - icon before input's text / иконка перед текстом input  
-**disabled** - like <option disabled> / как <option disabled>  
-**selected** - like <option selected> / как <option selected>  
+**disabled** - like `<option disabled>` / как `<option disabled>`   
+**selected** - like `<option selected>` / как `<option selected>`   
 **alter** - one of more descriptions / одно или более описаний:  
+
 ```
 ...
 alter: [
