@@ -5,9 +5,12 @@
   </button>
   <ng-template #basicSelect>
       <div *ngIf="inputData.length" class="new-select-item" (click)="openList()" [class.no-validate]="invalidData" [class.open-list]="listTrigger">
-          <span class="select-show" *ngFor="let show of selectedShow"><i *ngIf="show.icon" [class]="show.icon"></i> {{show.title}} </span>
-          <i *ngIf="!listTrigger" class="fa fa-angle-down"></i>
-          <i *ngIf="listTrigger" class="fa fa-angle-up"></i>
+          <span class="select-show" *ngIf="headerData&&selectedShow.length; else showSlected"><i *ngIf="headerIcon" [class]="headerIcon"></i> {{headerData}}</span>
+          <ng-template #showSlected>
+                <span class="select-show" *ngFor="let show of selectedShow"><i *ngIf="show.icon" [class]="show.icon"></i> {{show.title}} </span>
+                <i *ngIf="!listTrigger" class="fa fa-angle-down"></i>
+                <i *ngIf="listTrigger" class="fa fa-angle-up"></i>
+          </ng-template>
       </div>
       <div *ngIf="inputData.length == 0" class="new-select-item" [class.no-validate]="invalidData">
           <span>{{defaultData}}</span>
