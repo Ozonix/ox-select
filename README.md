@@ -14,8 +14,8 @@
 npm install ox-select
 ```
 
-**For icons install font-awesome or ionic icons pack**
-**Для работы иконок установите font-awesome или ionic пакеты**
+**For icons install font-awesome or ionic icons pack**  
+**Для работы иконок установите font-awesome или ionic пакеты**  
 
 ```
 npm install font-awesome --save
@@ -40,8 +40,8 @@ npm install font-awesome --save
 
 ## Using/Использование
 
-import module where will you use select:
-Добавьте модуль в ваш проект, там где будете использовать select:
+import module where will you use select:  
+Добавьте модуль в ваш проект, там где будете использовать select:  
 
 ```
 import { OxSelectModule } from 'ox-select';
@@ -58,10 +58,12 @@ import { OxSelectModule } from 'ox-select';
 ...
 ```
 
+
 > If you have error/Если имеется ошибка:
 > > Module not found: Error...
 > add link to index.ts file of OxSelectModule/Добавьте ссылку до index.ts файла модуля OxSelectModule
- 
+
+
 ```//tsconfig.json
 {
   "compileOnSave": false,
@@ -88,23 +90,23 @@ import { OxSelectModule } from 'ox-select';
 }
 ```
 
-Add tag <ox-select> with any attributs your need into html-template (all attributes not required)
-Добавьте тэг <ox-select> с любыми требуемыми для Вас аттрибутами (все атрибуты необязательные)
+Add tag <ox-select> with any attributs your need into html-template (all attributes not required)  
+Добавьте тэг <ox-select> с любыми требуемыми для Вас аттрибутами (все атрибуты необязательные)  
 
--alter attr-
-**filterSelect** - add filter for searching / Добавляет поле с поиском
-**multySelect** - switch on multiselect mode / Включает режим с множественным выбором
-**defaultData** - text when haven't options / Текст когда нет опций
-**headerTitle** - text when have no selected options yet / Текст когда еще ничего не выбрано из списка опций
-**headerIcon** - icon before headerTitle / иконка перед headerTitle
-**styleSelect** - use like ngStyle for box of select / работает как ngStyle для вьюхи select
+-alter attr-  
+**filterSelect** - add filter for searching / Добавляет поле с поиском  
+**multySelect** - switch on multiselect mode / Включает режим с множественным выбором  
+**defaultData** - text when haven't options / Текст когда нет опций  
+**headerTitle** - text when have no selected options yet / Текст когда еще ничего не выбрано из списка опций  
+**headerIcon** - icon before headerTitle / иконка перед headerTitle  
+**styleSelect** - use like ngStyle for box of select / работает как ngStyle для вьюхи select  
 
--main attr-
-**inputData** - input data :) / Входящие данные
-**outputData** - output data / Выходящие данные
+-main attr-  
+**inputData** - input data :) / Входящие данные  
+**outputData** - output data / Выходящие данные  
 
-Input data must be array of object by next style:
-Входящие данные должны быть массивом объектов следующего вида:
+Input data must be array of object by next style:  
+Входящие данные должны быть массивом объектов следующего вида:  
 
 ```
 this.method.selectUsers().subscribe(
@@ -132,19 +134,19 @@ this.method.selectUsers().subscribe(
 
 ```
 
-where / где:
+where / где:  
 
--required/обязательные-
+-required/обязательные-  
 
-**input** - like <option>Input</option> / как <option>Input</option>
-**output** - like value in <option value="output"> / как value в <option value="output">
+**input** - like <option>Input</option> / как <option>Input</option>  
+**output** - like value in <option value="output"> / как value в <option value="output">  
 
--additional/дополнительные-
+-additional/дополнительные-  
 
-**icon** - icon before input's text / иконка перед текстом input
-**disabled** - like <option disabled> / как <option disabled>
-**selected** - like <option selected> / как <option selected>
-**alter** - one of more descriptions / одно или более описаний:
+**icon** - icon before input's text / иконка перед текстом input  
+**disabled** - like <option disabled> / как <option disabled>  
+**selected** - like <option selected> / как <option selected>  
+**alter** - one of more descriptions / одно или более описаний:  
 ```
 ...
 alter: [
@@ -164,7 +166,7 @@ alter: [
 ...
 ```
 
-Html template / Html шаблон:
+Html template / Html шаблон:  
 
 ```
   <ox-select
@@ -214,9 +216,9 @@ Html template / Html шаблон:
 
 ```
 
-Output data listen event of select and call shown method where $event is array/ Выходные данные прослушиваются в outputData и вызывают указанный метод где $event - это массив
+Output data listen event of select and call shown method where $event is array/ Выходные данные прослушиваются в outputData и вызывают указанный метод где $event - это массив  
 
-example/ к примеру:
+example/ к примеру:  
 
 ```
 private form: FormGroup = this.fb.group({
