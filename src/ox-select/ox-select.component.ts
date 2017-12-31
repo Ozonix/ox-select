@@ -22,6 +22,7 @@ export class OxSelectComponent implements OnInit, OnChanges {
 
     @Output() outputData = new EventEmitter();
 
+    private oldData: any[] = [];
     private searchingData: any[] = [];
     private selectedData: any[] = [];
     private selectedShow: any[] = [];
@@ -93,9 +94,10 @@ export class OxSelectComponent implements OnInit, OnChanges {
         });
     }
 
-    ngOnChanges() {
-        if(this.inputData.length == 0) {
-            this.initData();
+    ngOnChanges() {      
+        if(JSON.stringify(this.inputData) != JSON.stringify(this.oldData)) {
+            Object.assign(this.oldData ,this.initData);
+            this.initData(); 
         }
     }
     
