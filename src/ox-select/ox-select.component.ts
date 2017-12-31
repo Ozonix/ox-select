@@ -84,6 +84,7 @@ export class OxSelectComponent implements OnInit, OnChanges {
                 if(data.selected) {
                     this.sendData(data);
                     if(data.disabled) {
+                        this.selectedData.push(data.output);
                         this.selectedShow.push({title: data.input});
                     }
                 }

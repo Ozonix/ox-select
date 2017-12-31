@@ -58,9 +58,8 @@ ul {
 
 .new-select {
     position: relative;
-    width: calc(100% - 20px);
-    margin: 10px;
-    margin-top: 0px;
+    width: 100%;
+    margin: 0px;
     font-size: 13px;
 
     &-item {
