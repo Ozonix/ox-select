@@ -16,8 +16,9 @@ export class OxSelectComponent implements OnInit, OnChanges {
     @Input() styleSelect: any = {};
 
     @Input() inputData: any[] = [];
+    
     @Input() defaultData: string = '- нет данных -';
-    @Input() headerData: string = '';
+    @Input() headerTitle: string = '';
     @Input() headerIcon: string = '';
 
     @Output() outputData = new EventEmitter();
