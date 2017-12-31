@@ -1,53 +1,53 @@
 <div class="new-select" [ngStyle]="styleSelect">
-  <button *ngIf="actionSelect; else basicSelect" class="new-select-button" (click)="openList()" [class.open-list]="listTrigger">
-      <i class="fa fa-cog"></i>
-      <span>{{defaultData}}</span>
-  </button>
-  <ng-template #basicSelect>
-      <div *ngIf="inputData.length" class="new-select-item" (click)="openList()" [class.no-validate]="invalidData" [class.open-list]="listTrigger">
-          <span class="select-show" *ngIf="headerData&&!selectedShow.length; else showSlected"><i *ngIf="headerIcon" [class]="headerIcon"></i> {{headerData}}</span>
-          <ng-template #showSlected>
-                <span class="select-show" *ngFor="let show of selectedShow"><i *ngIf="show.icon" [class]="show.icon"></i> {{show.title}} </span>
+    <button *ngIf="actionSelect; else basicSelect" class="new-select-button" (click)="openList()" [class.open-list]="listTrigger">
+        <i class="fa fa-cog"></i>
+        <span>{{defaultData}}</span>
+    </button>
+    <ng-template #basicSelect>
+        <div *ngIf="inputData.length" class="new-select-item" (click)="openList()" [class.no-validate]="invalidData" [class.open-list]="listTrigger">
+                <span class="select-show" *ngIf="headerData&&!selectedShow.length; else showSlected"><i *ngIf="headerIcon" [class]="headerIcon"></i> {{headerData}}</span>
+                <ng-template #showSlected>
+                        <span class="select-show" *ngFor="let show of selectedShow"><i *ngIf="show.icon" [class]="show.icon"></i> {{show.title}} </span>
+                </ng-template>
                 <i *ngIf="!listTrigger" class="fa fa-angle-down"></i>
                 <i *ngIf="listTrigger" class="fa fa-angle-up"></i>
-          </ng-template>
-      </div>
-      <div *ngIf="inputData.length == 0" class="new-select-item" [class.no-validate]="invalidData">
-          <span>{{defaultData}}</span>
-      </div>
-  </ng-template>
-  <div class="new-select-list" *ngIf="listTrigger">
-      <div class="new-select-list-filter" *ngIf="filterSelect&&inputData.length>5">
-          <span>Поиск по названию</span>
-          <i class="fa fa-search"></i>
-          <input #search (input)="searchData(search.value)">
-      </div>
-      <ul class="new-select-list-ul" *ngIf="!searchingData.length">
-          <li class="new-select-list-item"
-              [class.disabled-item]="data?.disabled"
-              [class.selected-item]="data?.selected&&multySelect"
-              *ngFor="let data of inputData"
-              (click)="sendData(data)">
-                  <i *ngIf="data.icon" [class]="data.icon"></i>
-                  <span>{{data.input}}</span>
-                  <ul *ngIf="data.alter">
-                      <li class="alter-item" *ngFor="let al of data.alter" [hidden]="!al.value">{{al.key}}: {{al.value}}</li>
-                  </ul>
-          </li>
-      </ul>
-      <ul class="new-select-list-ul" *ngIf="searchingData.length">
-          <li class="new-select-list-item"
-              [class.disabled-item]="data?.disabled"
-              [class.selected-item]="data?.selected&&multySelect"
-              *ngFor="let data of searchingData"
-              (click)="sendData(data)">
-                  <i *ngIf="data.icon" [class]="data.icon"></i>
-                  <span>{{data.input}}</span>
-                  <ul *ngIf="data.alter">
-                      <li class="alter-item" *ngFor="let al of data.alter" [hidden]="!al.value">{{al.key}}: {{al.value}}</li>
-                  </ul>
-          </li>
-      </ul>
-      <div class="no-select" (click)="openList()"></div>
-  </div>
+        </div>
+        <div *ngIf="inputData.length == 0" class="new-select-item" [class.no-validate]="invalidData">
+            <span>{{defaultData}}</span>
+        </div>
+    </ng-template>
+    <div class="new-select-list" *ngIf="listTrigger">
+        <div class="new-select-list-filter" *ngIf="filterSelect&&inputData.length>5">
+            <span>Поиск по названию</span>
+            <i class="fa fa-search"></i>
+            <input #search (input)="searchData(search.value)">
+        </div>
+        <ul class="new-select-list-ul" *ngIf="!searchingData.length">
+            <li class="new-select-list-item"
+                [class.disabled-item]="data?.disabled"
+                [class.selected-item]="data?.selected&&multySelect"
+                *ngFor="let data of inputData"
+                (click)="sendData(data)">
+                    <i *ngIf="data.icon" [class]="data.icon"></i>
+                    <span>{{data.input}}</span>
+                    <ul *ngIf="data.alter">
+                        <li class="alter-item" *ngFor="let al of data.alter" [hidden]="!al.value">{{al.key}}: {{al.value}}</li>
+                    </ul>
+            </li>
+        </ul>
+        <ul class="new-select-list-ul" *ngIf="searchingData.length">
+            <li class="new-select-list-item"
+                [class.disabled-item]="data?.disabled"
+                [class.selected-item]="data?.selected&&multySelect"
+                *ngFor="let data of searchingData"
+                (click)="sendData(data)">
+                    <i *ngIf="data.icon" [class]="data.icon"></i>
+                    <span>{{data.input}}</span>
+                    <ul *ngIf="data.alter">
+                        <li class="alter-item" *ngFor="let al of data.alter" [hidden]="!al.value">{{al.key}}: {{al.value}}</li>
+                    </ul>
+            </li>
+        </ul>
+        <div class="no-select" (click)="openList()"></div>
+    </div>
 </div>
