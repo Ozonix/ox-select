@@ -1,9 +1,9 @@
-# ox-select
+# ox-select. Smart select for Angular 4+
 
 
-> Smart multiselect for ReactiveForms and simple using
+> Custom multiselect with filter for ReactiveForms and simple using
 >
-> Умный мультиселект для реактивных форм и обычного использования
+> Кастомный мультиселект с фильтром для реактивных форм и обычного использования
 
 
 ![alt text](src/assets/select_1.jpg)
@@ -60,9 +60,11 @@ import { OxSelectModule } from 'ox-select';
 ...
 ```
 
-> If you have error/Если имеется ошибка:
+> If you have error:
+> Если имеется ошибка:
 > > Module not found: Error...
-> add link to index.ts file of OxSelectModule/Добавьте ссылку до index.ts файла модуля OxSelectModule
+> add link to index.ts file of OxSelectModule
+> Добавьте ссылку до index.ts файла модуля OxSelectModule
 
 
 ```//tsconfig.json
