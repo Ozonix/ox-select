@@ -1,8 +1,10 @@
 # ox-select
 
+
 > Smart multiselect for ReactiveForms and simple using
 >
 > Умный мультиселект для реактивных форм и обычного использования
+
 
 ![alt text](src/assets/select_1.jpg)
 
@@ -58,7 +60,6 @@ import { OxSelectModule } from 'ox-select';
 ...
 ```
 
-
 > If you have error/Если имеется ошибка:
 > > Module not found: Error...
 > add link to index.ts file of OxSelectModule/Добавьте ссылку до index.ts файла модуля OxSelectModule
@@ -93,8 +94,60 @@ import { OxSelectModule } from 'ox-select';
 Add tag <ox-select> with any attributs your need into html-template (all attributes not required)  
 Добавьте тэг <ox-select> с любыми требуемыми для Вас аттрибутами (все атрибуты необязательные)  
 
+
+```
+  <ox-select
+    [filterSelect]="true"
+    [filterTitle]="'Search in list'"
+    [multySelect]="true"
+    [inputData]="items"
+    [defaultData]="'No Items'"
+    [headerTitle]="'Select any items'"
+    [headerIcon]="'fa fa-thumbs-o-up'"
+    [styleSelect]="{
+      margin: '0px 10px',
+      width: 'calc(100% - 20px)'
+    }"
+    (outputData)=select($event, 'select-items')>
+  </ox-select>
+
+  or/или
+
+  <ox-select
+    [inputData]="[
+        {
+            input: 'check 1',
+            output: 1,
+            icon: 'fa fa-user-plus'
+        },
+        {
+            input: 'check 2',
+            output: 2,
+            alter: [
+                key: 'description',
+                value: 'not check it!'
+            ]
+        },
+        {
+            input: 'check 3',
+            output: 3,
+            selected: true
+        },
+        {
+            input: 'check 4'
+            output: 4,
+            disabled: true
+        }
+    ]"
+    (outputData)=select($event, 'check-item')>
+  </ox-select>
+
+```
+
+
 -alter attr-  
 **filterSelect** - add filter for searching / Добавляет поле с поиском  
+**filterTitle** - text of filter / текст фильтра   
 **multySelect** - switch on multiselect mode / Включает режим с множественным выбором  
 **defaultData** - text when haven't options / Текст когда нет опций  
 **headerTitle** - text when have no selected options yet / Текст когда еще ничего не выбрано из списка опций  
@@ -167,57 +220,8 @@ alter: [
 ...
 ```
 
-Html template / Html шаблон:  
-
-```
-  <ox-select
-    [filterSelect]="true"
-    [multySelect]="true"
-    [inputData]="items"
-    [defaultData]="'No Items'"
-    [headerTitle]="'Select any items'"
-    [headerIcon]="'fa fa-thumbs-o-up'"
-    [styleSelect]="{
-      margin: '0px 10px',
-      width: 'calc(100% - 20px)'
-    }"
-    (outputData)=select($event, 'select-items')>
-  </ox-select>
-
-  or/или
-
-  <ox-select
-    [inputData]="[
-        {
-            input: 'check 1',
-            output: 1,
-            icon: 'fa fa-user-plus'
-        },
-        {
-            input: 'check 2',
-            output: 2,
-            alter: [
-                key: 'description',
-                value: 'not check it!'
-            ]
-        },
-        {
-            input: 'check 3',
-            output: 3,
-            selected: true
-        },
-        {
-            input: 'check 4'
-            output: 4,
-            disabled: true
-        }
-    ]"
-    (outputData)=select($event, 'check-item')>
-  </ox-select>
-
-```
-
-Output data listen event of select and call shown method where $event is array/ Выходные данные прослушиваются в outputData и вызывают указанный метод где $event - это массив  
+Output data listen event of select and call shown method where $event is array  
+Выходные данные прослушиваются в outputData и вызывают указанный метод где $event - это массив   
 
 example/ к примеру:  
 

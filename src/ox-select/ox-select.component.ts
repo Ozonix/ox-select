@@ -20,6 +20,7 @@ export class OxSelectComponent implements OnInit, OnChanges {
     @Input() defaultData: string = '- нет данных -';
     @Input() headerTitle: string = '';
     @Input() headerIcon: string = '';
+    @Input() filterTitle: string = 'Поиск по списку';
 
     @Output() outputData = new EventEmitter();
 
@@ -63,7 +64,7 @@ export class OxSelectComponent implements OnInit, OnChanges {
                 this.selectedShow.push({title:data.input, icon:data.icon || 'fa fa-check-circle'});
                 this.listTrigger = false;
             }
-            
+
             this.outputData.emit(this.selectedData);
         } 
     }
